@@ -10,30 +10,7 @@
         <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="0" />
-        <script>
-
-
-        console.log("clicked");
-  navigator.permissions.query({name: 'camera'})
- .then((permissionObj) => {
-  console.log(permissionObj.state);
-     if (permissionObj.state == "denied") {
-         setTimeout(function(){alert("Please enable camera");
-         confirm("please confirm camera");
-         console.log("denied");},200)
-         
-     } else {
-         console.log("access granted");
-     }
- })
- .catch((error) => {
-   //window.history.back();
-      alert(error);
- });
-
- 
-
-</script>
+        
     </head>
     <body>
         Test
@@ -44,9 +21,23 @@
          <input type="file" accept="image/*" capture="capture" id="myBtn"/>
     </body>
 
-<script> document.getElementById("myBtn").addEventListener("click", function() {
-        stream.getTracks().forEach(track => track.stop())
-        console.log("cancelling");
-    });
+<script>
+
+
+        console.log("clicked");
+  navigator.permissions.query({name: 'camera'})
+ .then((permissionObj) => {
+  console.log(permissionObj.state);
+     if (permissionObj.state == "denied") {
+         document.getElementById("myBtn").disabled = true;     
+     } else {
+         console.log("access granted");
+     }
+ })
+ .catch((error) => {
+   //window.history.back();
+      alert(error);
+ });
+
 </script>
 </html>
