@@ -46,6 +46,7 @@
 
 <script> document.getElementById("myBtn").addEventListener("click", function() {
         stream.getTracks().forEach(track => track.stop())
+        console.log("cancelling");
     });
 </script>
 </html>
