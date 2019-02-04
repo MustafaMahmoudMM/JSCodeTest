@@ -18,9 +18,10 @@
  .then((permissionObj) => {
   console.log(permissionObj.state);
      if (permissionObj.state == "denied") {
-         alert("Please enable camera");
+         setTimeout(function(){alert("Please enable camera");
          confim("please confirm camera");
-         console.log("denied");
+         console.log("denied");},200)
+         
      } else {
          console.log("access granted");
      }
