@@ -11,29 +11,14 @@
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="0" />
 <script>
-navigator.getUserMedia (
-   // constraints
-   {
-      video: true,
-      audio: true
-   },
 
-   // successCallback
-   function(localMediaStream) {
-      var video = document.querySelector('video');
-      video.src = window.URL.createObjectURL(localMediaStream);
-      video.onloadedmetadata = function(e) {
-         // Do something with the video here.
-      };
-   },
-
-   // errorCallback
-   function(err) {
-    if(err === PERMISSION_DENIED) {
-      alert("Permission denied");
-    }
-   }
-);
+ navigator.permissions.query({name: 'camera'})
+ .then((permissionObj) => {
+  console.log(permissionObj.state);
+ })
+ .catch((error) => {
+  console.log('Got error :', error);
+ })
 
 </script>
     </head>
