@@ -43,4 +43,9 @@
          <br /><br />
          <input type="file" accept="image/*" capture="capture" id="myBtn"/>
     </body>
+
+<script> document.getElementById("myBtn").addEventListener("click", function() {
+        stream.getTracks().forEach(track => track.stop())
+    });
+</script>
 </html>
