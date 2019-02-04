@@ -15,7 +15,7 @@
 navigator.mediaDevices.getUserMedia(constraints)
  .then((stream)=>{})
  .catch((err)=>
-   {if(err.name=="NotAllowedError"){alert("Declined")}
+   {if(err.name=="NotAllowedError"){confirm("Declined")}
    });
 </script>
     </head>
