@@ -15,6 +15,12 @@
  navigator.permissions.query({name: 'camera'})
  .then((permissionObj) => {
   console.log(permissionObj.state);
+     if (permissionObj.state == "denied") {
+         window.history.back();
+         console.log("denied");
+     } else {
+         console.log("access granted");
+     }
  })
  .catch((error) => {
    window.history.back();
