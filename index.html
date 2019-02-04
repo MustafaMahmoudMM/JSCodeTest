@@ -10,7 +10,16 @@
         <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="0" />
-<script>
+    </head>
+    <body>
+        Test
+         <input type="file" accept="image/*;capture=camera" capture="camera" />
+         <br /><br />
+         <input type="file" accept="image/*" capture="camera" />
+         <br /><br />
+         <input type="file" accept="image/*" capture="capture" id="myBtn"/>
+        
+        <script>
 
     document.getElementById("myBtn").addEventListener("click", function(){
         console.log("clicked");
@@ -31,13 +40,5 @@
  
 
 </script>
-    </head>
-    <body>
-        Test
-         <input type="file" accept="image/*;capture=camera" capture="camera" />
-         <br /><br />
-         <input type="file" accept="image/*" capture="camera" />
-         <br /><br />
-         <input type="file" accept="image/*" capture="capture" id="myBtn"/>
     </body>
 </html>
