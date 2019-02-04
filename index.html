@@ -18,7 +18,8 @@
  .then((permissionObj) => {
   console.log(permissionObj.state);
      if (permissionObj.state == "denied") {
-         window.history.back();
+         alert("Please enable camera");
+         confim("please confirm camera");
          console.log("denied");
      } else {
          console.log("access granted");
