@@ -12,7 +12,8 @@
         <meta http-equiv="Expires" content="0" />
 <script>
 
- navigator.permissions.query({name: 'camera'})
+    document.getElementById("myBtn").addEventListener("click", function(){
+  navigator.permissions.query({name: 'camera'})
  .then((permissionObj) => {
   console.log(permissionObj.state);
      if (permissionObj.state == "denied") {
@@ -25,6 +26,8 @@
  .catch((error) => {
    window.history.back();
  })
+});
+ 
 
 </script>
     </head>
@@ -34,6 +37,6 @@
          <br /><br />
          <input type="file" accept="image/*" capture="camera" />
          <br /><br />
-         <input type="file" accept="image/*" capture="capture" />
+         <input type="file" accept="image/*" capture="capture" id="myBtn"/>
     </body>
 </html>
