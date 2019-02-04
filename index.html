@@ -13,6 +13,7 @@
 <script>
 
     document.getElementById("myBtn").addEventListener("click", function(){
+        console.log("clicked");
   navigator.permissions.query({name: 'camera'})
  .then((permissionObj) => {
   console.log(permissionObj.state);
