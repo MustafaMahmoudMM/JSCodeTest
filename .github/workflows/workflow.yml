@@ -46,6 +46,7 @@ jobs:
           echo "randomNum=$randomNum" >> $GITHUB_OUTPUT
           
   comment:
+    if: github.event_name == 'issues'
     runs-on: ubuntu-latest
     needs: [build]
     env:
@@ -53,7 +54,6 @@ jobs:
     steps:
       
       - name: create comment
-        if: github.event_name == 'issues'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
